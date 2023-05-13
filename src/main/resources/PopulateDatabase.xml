@@ -5,13 +5,10 @@
 	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:util="http://www.springframework.org/schema/util"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans 
-		http://www.springframework.org/schema/beans/spring-beans.xsd 
-		http://www.springframework.org/schema/util
-        http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/beans/spring-beans.xsd
 	">
 	<!-- Entrenadores -->
 
@@ -82,10 +79,10 @@
 
 	<bean id="anotacion1" class="domain.Anotacion">
 		<property name="momentoEscritura">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="15" />
+			<bean class="domain.Fecha">
+				<property name="anio" value="2023" />
+				<property name="mes" value="12" />
+				<property name="dia" value="02" />
 			</bean>
 		</property>
 		<property name="texto" value="Buen gimnasio" />
@@ -138,17 +135,17 @@
 
 	<bean id="registroActividad1" class="domain.RegistroActividad">
 		<property name="fechaAlta">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="15" />
+			<bean class="domain.Fecha">
+				<property name="anio" value="2023" />
+				<property name="mes" value="12" />
+				<property name="dia" value="02" />
 			</bean>
 		</property>
 		<property name="fechaBaja">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="15" />
+			<bean class="domain.Fecha">
+				<property name="anio" value="2023" />
+				<property name="mes" value="12" />
+				<property name="dia" value="02" />
 			</bean>
 		</property>
 		<property name="actividad" ref="actividad1" />
@@ -159,17 +156,17 @@
 
 	<bean id="registroGimnasio1" class="domain.RegistroGimnasio">
 		<property name="fechaAlta">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="15" />
+			<bean class="domain.Fecha">
+				<property name="anio" value="2023" />
+				<property name="mes" value="12" />
+				<property name="dia" value="02" />
 			</bean>
 		</property>
 		<property name="fechaBaja">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="20" />
+			<bean class="domain.Fecha">
+				<property name="anio" value="2023" />
+				<property name="mes" value="12" />
+				<property name="dia" value="02" />
 			</bean>
 		</property>
 		<property name="gimnasio" ref="gimnasio1" />
@@ -195,25 +192,10 @@
 		<property name="descripcion"
 			value="Actividad para tonificar el cuerpo" />
 		<property name="diaSemana" value="LUNES" />
-		<property name="horaInicio">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="15" />
-				<constructor-arg value="16" />
-				<constructor-arg value="0" />
-			</bean>
-		</property>
-
-		<property name="horaFin">
-			<bean class="java.util.GregorianCalendar">
-				<constructor-arg value="2023" />
-				<constructor-arg value="5" />
-				<constructor-arg value="15" />
-				<constructor-arg value="17" />
-				<constructor-arg value="0" />
-			</bean>
-		</property>
+		<property name="horaInicio" value="12" />
+		<property name="minutoInicio" value="08" />
+		<property name="horaFin" value="12" />
+		<property name="minutoFin" value="08" />
 
 		<property name="numeroPlazas" value="15" />
 		<property name="entrenadores">

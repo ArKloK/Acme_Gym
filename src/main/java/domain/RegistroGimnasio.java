@@ -1,14 +1,13 @@
 
 package domain;
 
-import java.util.Calendar;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-
-import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -22,24 +21,30 @@ public class RegistroGimnasio extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	private Calendar	fechaAlta;
-	private Calendar	fechaBaja;
+	private Fecha	fechaAlta;
+	private Fecha	fechaBaja;
 
 
-	@NotBlank
-	public Calendar getFechaAlta() {
+	@AttributeOverrides({
+		@AttributeOverride(name = "anio", column = @Column(name = "anioAlta")), @AttributeOverride(name = "mes", column = @Column(name = "mesAlta")), @AttributeOverride(name = "dia", column = @Column(name = "diaAlta"))
+	})
+	//@NotBlank
+	public Fecha getFechaAlta() {
 		return this.fechaAlta;
 	}
 
-	public void setFechaAlta(final Calendar fechaAlta) {
+	public void setFechaAlta(final Fecha fechaAlta) {
 		this.fechaAlta = fechaAlta;
 	}
 
-	public Calendar getFechaBaja() {
+	@AttributeOverrides({
+		@AttributeOverride(name = "anio", column = @Column(name = "anioBaja")), @AttributeOverride(name = "mes", column = @Column(name = "mesBaja")), @AttributeOverride(name = "dia", column = @Column(name = "diaBaja"))
+	})
+	public Fecha getFechaBaja() {
 		return this.fechaBaja;
 	}
 
-	public void setFechaBaja(final Calendar fechaBaja) {
+	public void setFechaBaja(final Fecha fechaBaja) {
 		this.fechaBaja = fechaBaja;
 	}
 

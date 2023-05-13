@@ -1,12 +1,14 @@
 #./src/main/resources/Entities.map
-#Sat May 13 12:24:27 CEST 2023
-paso1=35
-cv1=31
-gimnasio1=33
-entrenamiento1=34
-cliente1=27
-gerente1=29
-entrenador1=26
-anotacion1=30
-actividad1=32
-administrador1=28
+#Sat May 13 18:45:14 CEST 2023
+registroGimnasio1=53
+paso1=51
+cv1=47
+gimnasio1=49
+entrenamiento1=50
+cliente1=43
+gerente1=45
+entrenador1=42
+anotacion1=46
+actividad1=48
+administrador1=44
+registroActividad1=52

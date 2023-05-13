@@ -1,8 +1,6 @@
 
 package domain;
 
-import java.util.Calendar;
-
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
@@ -22,16 +20,16 @@ public class Anotacion extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	private Calendar	momentoEscritura;
-	private String		texto;
-	private int			calificacion;
+	private Fecha	momentoEscritura;
+	private String	texto;
+	private int		calificacion;
 
 
-	public Calendar getMomentoEscritura() {
+	public Fecha getMomentoEscritura() {
 		return this.momentoEscritura;
 	}
 
-	public void setMomentoEscritura(final Calendar momentoEscritura) {
+	public void setMomentoEscritura(final Fecha momentoEscritura) {
 		this.momentoEscritura = momentoEscritura;
 	}
 

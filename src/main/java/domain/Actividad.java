@@ -1,7 +1,6 @@
 
 package domain;
 
-import java.util.Calendar;
 import java.util.Collection;
 
 import javax.persistence.Access;
@@ -43,8 +42,10 @@ public class Actividad extends DomainEntity {
 	private String		fotos;
 	private String		descripcion;
 	private DiaSemana	diaSemana;
-	private Calendar	horaInicio;
-	private Calendar	horaFin;
+	private int			horaInicio;
+	private int			minutoInicio;
+	private int			horaFin;
+	private int			minutoFin;
 	private int			numeroPlazas;
 
 
@@ -82,19 +83,19 @@ public class Actividad extends DomainEntity {
 		this.diaSemana = diaSemana;
 	}
 
-	public Calendar getHoraInicio() {
+	public int getHoraInicio() {
 		return this.horaInicio;
 	}
 
-	public void setHoraInicio(final Calendar horaInicio) {
+	public void setHoraInicio(final int horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public Calendar getHoraFin() {
+	public int getHoraFin() {
 		return this.horaFin;
 	}
 
-	public void setHoraFin(final Calendar horaFin) {
+	public void setHoraFin(final int horaFin) {
 		this.horaFin = horaFin;
 	}
 
@@ -106,8 +107,24 @@ public class Actividad extends DomainEntity {
 		this.numeroPlazas = numeroPlazas;
 	}
 
-
 	// Relationships ----------------------------------------------------------
+
+	public int getMinutoInicio() {
+		return this.minutoInicio;
+	}
+
+	public void setMinutoInicio(final int minutoInicio) {
+		this.minutoInicio = minutoInicio;
+	}
+
+	public int getMinutoFin() {
+		return this.minutoFin;
+	}
+
+	public void setMinutoFin(final int minutoFin) {
+		this.minutoFin = minutoFin;
+	}
+
 
 	private Collection<Entrenador>			entrenadores;
 	private Gimnasio						gimnasio;
