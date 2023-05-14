@@ -8,6 +8,7 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -21,7 +22,7 @@ public class RegistroActividad extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidFecha
+	@Valid
 	private Fecha	fechaAlta;
 	private Fecha	fechaBaja;
 

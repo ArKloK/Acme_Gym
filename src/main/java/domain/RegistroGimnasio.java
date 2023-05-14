@@ -8,6 +8,7 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
 @Entity
 @Access(AccessType.PROPERTY)
@@ -21,7 +22,7 @@ public class RegistroGimnasio extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@ValidFecha
+	@Valid
 	private Fecha	fechaAlta;
 	private Fecha	fechaBaja;
 
@@ -29,7 +30,7 @@ public class RegistroGimnasio extends DomainEntity {
 	@AttributeOverrides({
 		@AttributeOverride(name = "anio", column = @Column(name = "anioAlta")), @AttributeOverride(name = "mes", column = @Column(name = "mesAlta")), @AttributeOverride(name = "dia", column = @Column(name = "diaAlta"))
 	})
-	
+
 	public Fecha getFechaAlta() {
 		return this.fechaAlta;
 	}
